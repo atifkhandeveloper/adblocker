@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ads"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="30dp"/>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Block Ads"
+                android:textSize="20dp"
+                android:textColor="@android:color/black"
+                android:layout_toRightOf="@+id/icon"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="20dp"/>
+
+            <TextView
+                android:id="@+id/des"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ad BLocker is supported by Ads but now you can remove Ads from Ad Blocker by upgrading to Pro."
+                android:layout_below="@+id/title"
+                android:layout_toRightOf="@+id/icon"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"/>
+
+
+            <Button
+                android:id="@+id/adsss"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:text="Go Premium"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="@android:color/white"
+                android:textSize="20dp"
+                android:layout_below="@+id/des"
+                android:layout_marginTop="30dp"
+                android:background="@android:color/holo_blue_dark"/>
+
+
+            <Button
+                android:id="@+id/later"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:text="Later"
+                android:textSize="15dp"
+                android:layout_marginTop="30dp"
+                android:layout_below="@+id/des"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@android:color/white"
+                android:background="@android:color/darker_gray"
+               />
+        </RelativeLayout>
+</LinearLayout>

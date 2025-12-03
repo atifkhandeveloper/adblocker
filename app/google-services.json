@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "744506307769",
+    "project_id": "android--joetaroab-ad-blocker",
+    "storage_bucket": "android--joetaroab-ad-blocker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:744506307769:android:8aa27defe9445656ef1768",
+        "android_client_info": {
+          "package_name": "com.joettaapps.adblocker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFuOruZnsPxxhRBUXbLpzPXzTuocpbtrY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorBackgroundSecondary">#424242</color>
+    <color name="colorStateImage">#B0BEC5</color>
+
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorMainBg">#FFFFFF</color>
+    <color name="colorRoundBtn">#007AFF</color>
+    <color name="colorGrey">#DDDDDD</color>
+    <color name="colorred">#007AFF</color>
+    <color name="colorgrey">#CCCCCC</color>
+</resources>

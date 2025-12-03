@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorBackgroundSecondary">#ECEFF1</color>
+    <color name="colorStateImage">#B0BEC5</color>
+    <color name="colorPrimary">#EA2525</color>
+    <color name="colorPrimaryDark">#E40707</color>
+    <color name="colorAccent">#40c4ff</color>
+    <color name="stateError">#F44336</color>
+
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorMainBg">#FFFFFF</color>
+    <color name="colorRoundBtn">#007AFF</color>
+    <color name="colorGrey">#DDDDDD</color>
+    <color name="colorred">#007AFF</color>
+    <color name="colorgrey">#CCCCCC</color>
+</resources>

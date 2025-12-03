@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Splash">
+
+
+    <FrameLayout
+        android:id="@+id/splash_native"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:id="@+id/pro"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/holo_blue_light">
+
+        <RelativeLayout
+            android:id="@+id/rr_pro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:fromDegrees="0"
+                android:indeterminate="false"
+                android:max="10"
+                android:minWidth="200dp"
+                android:minHeight="50dp"
+                android:progress="1"
+                android:toDegrees="100" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rr_pro"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:minWidth="200dp"
+                android:minHeight="50dp"
+                android:textSize="16dp"
+                android:textColor="@android:color/white" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.joettaapps.adblocker.UpgradeActivity">
+
+
+    <ImageView
+        android:id="@+id/close"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:src="@drawable/closee"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Ad Blocker Premium"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/close"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textColor="@android:color/holo_blue_dark"/>
+
+    <ImageView
+        android:id="@+id/textt"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:src="@mipmap/ic_launcher"/>
+
+    <ImageView
+        android:id="@+id/plan"
+        android:layout_below="@+id/textt"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/adblocker_pre_two"
+        android:scaleType="fitXY"/>
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="wrap_content"
+        android:layout_height="220dp"
+        android:layout_below="@+id/plan"
+        android:layout_marginTop="10dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/item_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/item_image_1"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/ads"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:id="@+id/item_title_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No Ads"
+                    android:textColor="@android:color/black"
+                    android:layout_toRightOf="@+id/item_image_1"
+                    android:layout_marginLeft="50dp"
+                    android:textSize="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ad Blocker is supported by Ads but now you can remove them by upgrading to premium."
+                    android:layout_toRightOf="@+id/item_image_1"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/item_title_1"
+                    android:layout_marginRight="40dp"/>
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/view_1"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#e2e2e2"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/item_1"/>
+
+
+            <RelativeLayout
+                android:id="@+id/item_2"
+                android:layout_below="@+id/view_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp">
+
+                <ImageView
+                    android:id="@+id/item_image_2"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/refresh"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:id="@+id/item_title_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Refresh Host Files"
+                    android:textColor="@android:color/black"
+                    android:layout_toRightOf="@+id/item_image_2"
+                    android:layout_marginLeft="50dp"
+                    android:textSize="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="You can refresh your host files by upgrading to premium."
+                    android:layout_toRightOf="@+id/item_image_2"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/item_title_2"
+                    android:layout_marginRight="40dp"/>
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/view_2"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#e2e2e2"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/item_2"/>
+
+            <RelativeLayout
+                android:id="@+id/item_3"
+                android:layout_below="@+id/view_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp">
+
+                <ImageView
+                    android:id="@+id/item_image_3"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/load" />
+
+                <TextView
+                    android:id="@+id/item_title_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Load Default Setting"
+                    android:textColor="@android:color/black"
+                    android:layout_toRightOf="@+id/item_image_3"
+                    android:layout_marginLeft="50dp"
+                    android:textSize="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="You can load default setting by upgrading to premium."
+                    android:layout_toRightOf="@+id/item_image_3"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/item_title_3"
+                    android:layout_marginRight="40dp"/>
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/view_3"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#e2e2e2"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/item_3"/>
+
+            <RelativeLayout
+                android:id="@+id/item_4"
+                android:layout_below="@+id/view_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp">
+
+                <ImageView
+                    android:id="@+id/item_image_4"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/importt"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:id="@+id/item_title_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Import Settings"
+                    android:textColor="@android:color/black"
+                    android:layout_toRightOf="@+id/item_image_4"
+                    android:layout_marginLeft="50dp"
+                    android:textSize="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="You can import settings by upgrading to premium."
+                    android:layout_toRightOf="@+id/item_image_4"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/item_title_4"
+                    android:layout_marginRight="40dp"/>
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/view_4"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#e2e2e2"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/item_4"/>
+
+            <RelativeLayout
+                android:id="@+id/item_5"
+                android:layout_below="@+id/view_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp">
+
+                <ImageView
+                    android:id="@+id/item_image_5"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/export"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:id="@+id/item_title_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Export Settings"
+                    android:textColor="@android:color/black"
+                    android:layout_toRightOf="@+id/item_image_5"
+                    android:layout_marginLeft="50dp"
+                    android:textSize="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="You can export settings by upgrading to premium."
+                    android:layout_toRightOf="@+id/item_image_5"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/item_title_5"
+                    android:layout_marginRight="40dp"/>
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/view_5"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#e2e2e2"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/item_5"/>
+
+            <RelativeLayout
+                android:id="@+id/item_6"
+                android:layout_below="@+id/view_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp">
+
+                <ImageView
+                    android:id="@+id/item_image_6"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/dark_theme"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:id="@+id/item_title_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dark Theme"
+                    android:textColor="@android:color/black"
+                    android:layout_toRightOf="@+id/item_image_6"
+                    android:layout_marginLeft="50dp"
+                    android:textSize="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="You can get Dark theme by upgrading to premium."
+                    android:layout_toRightOf="@+id/item_image_6"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/item_title_6"
+                    android:layout_marginRight="40dp"/>
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/view_6"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#e2e2e2"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/item_6"/>
+
+            <RelativeLayout
+                android:id="@+id/item_7"
+                android:layout_below="@+id/view_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp">
+
+                <ImageView
+                    android:id="@+id/item_image_7"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/notification"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:id="@+id/item_title_7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Show Notification"
+                    android:textColor="@android:color/black"
+                    android:layout_toRightOf="@+id/item_image_7"
+                    android:layout_marginLeft="50dp"
+                    android:textSize="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Show notifications by upgrading to premium."
+                    android:layout_toRightOf="@+id/item_image_7"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/item_title_7"
+                    android:layout_marginRight="40dp"/>
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/view_7"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#e2e2e2"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/item_7"/>
+
+            <RelativeLayout
+                android:id="@+id/item_8"
+                android:layout_below="@+id/view_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/item_image_8"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/about_us"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:id="@+id/item_title_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="About Us"
+                    android:textColor="@android:color/black"
+                    android:layout_toRightOf="@+id/item_image_8"
+                    android:layout_marginLeft="50dp"
+                    android:textSize="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="You can know about us by upgrading to premium."
+                    android:layout_toRightOf="@+id/item_image_8"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/item_title_8"
+                    android:layout_marginRight="40dp"/>
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/view_8"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#e2e2e2"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                android:layout_below="@+id/item_8"/>
+
+            <RelativeLayout
+                android:id="@+id/item_9"
+                android:layout_below="@+id/view_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp">
+
+                <ImageView
+                    android:id="@+id/item_image_9"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/logcat"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:id="@+id/item_title_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Logcat"
+                    android:textColor="@android:color/black"
+                    android:layout_toRightOf="@+id/item_image_9"
+                    android:layout_marginLeft="50dp"
+                    android:textSize="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Get logcat by upgrading to premium."
+                    android:layout_toRightOf="@+id/item_image_9"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/item_title_9"
+                    android:layout_marginRight="40dp" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/view_9"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#e2e2e2"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/item_9"
+                android:layout_marginBottom="20dp"/>
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Try for $3.99"
+        android:textSize="22dp"
+        android:layout_above="@+id/terms"
+        android:textColor="@android:color/white"
+        android:background="@android:color/holo_blue_dark"/>
+
+    <TextView
+        android:id="@+id/terms"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="If you go for the free trail after free trail period the payment will be deducted to your account. If you cancel the subscription then check your email when the trail period is over."
+        android:padding="10dp"
+        android:visibility="invisible"
+        android:textAlignment="center"
+        android:textSize="12dp"/>
+</RelativeLayout>

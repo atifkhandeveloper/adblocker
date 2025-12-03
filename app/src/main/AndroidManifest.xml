@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="org.joettaapps.adblocker">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+<!--    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION"-->
+<!--        tools:ignore="SystemPermissionTypo" />-->
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+    <uses-feature
+        android:name="android.software.leanback"
+        android:required="false" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:banner="@drawable/banner"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/appid"/>
+        <activity
+            android:name="org.joettaapps.adblocker.MainActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <activity
+            android:name=".Splash"
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+        <activity
+            android:name=".SplashScreen"
+            android:screenOrientation="portrait"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".PrivacyPolicyWebView"
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+
+        <activity
+            android:name=".PrivacyPolicy"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="false"/>
+
+        <activity android:name=".UpgradeActivityTwo"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".UpgradeActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity android:name=".ExitActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name="org.joettaapps.adblocker.InfoActivity"
+            android:label="@string/action_about"
+            android:parentActivityName="org.joettaapps.adblocker.MainActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="org.joettaapps.adblocker.ItemActivity"
+            android:label="@string/activity_edit"
+            android:parentActivityName="org.joettaapps.adblocker.MainActivity"
+            android:theme="@style/AppTheme" />
+        <service
+            android:name="org.joettaapps.adblocker.vpn.AdVpnService"
+            android:exported="false"
+            android:permission="android.permission.BIND_VPN_SERVICE">
+            <intent-filter>
+                <action android:name="android.net.VpnService" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="org.joettaapps.adblocker.db.RuleDatabaseUpdateJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:exported="true"/>
+        <receiver
+            android:name="org.joettaapps.adblocker.vpn.BootComplete"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="io.sentry.dsn" android:value="https://5f1734e720f0432e9bcb12e9f82c72e3@o1288843.ingest.sentry.io/6506494" />
+        <!-- Set tracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
+           We recommend adjusting this value in production. -->
+        <meta-data android:name="io.sentry.traces.sample-rate" android:value="1.0" />
+        <!-- Enable user interaction tracing to capture transactions for various UI events (such as clicks or scrolls). -->
+        <meta-data android:name="io.sentry.traces.user-interaction.enable" android:value="true" />
+
+    </application>
+
+</manifest>
