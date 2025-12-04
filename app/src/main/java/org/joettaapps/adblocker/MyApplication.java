@@ -39,6 +39,7 @@ import com.google.android.gms.ads.appopen.AppOpenAd;
 import com.google.android.gms.ads.appopen.AppOpenAd.AppOpenAdLoadCallback;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.util.Date;
 
@@ -48,11 +49,12 @@ public class MyApplication extends Application
 
   private AppOpenAdManager appOpenAdManager;
   private Activity currentActivity;
-
+    private FirebaseAnalytics mFirebaseAnalytics;
   @Override
   public void onCreate() {
     super.onCreate();
     this.registerActivityLifecycleCallbacks(this);
+      mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
     MobileAds.initialize(this, new OnInitializationCompleteListener() {
           @Override
           public void onInitializationComplete(
@@ -153,7 +155,6 @@ public class MyApplication extends Application
       AppOpenAd.load(
           context, getResources().getString(R.string.appopenad),
           request,
-          AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT,
           new AppOpenAdLoadCallback() {
             /**
              * Called when an app open ad has loaded.

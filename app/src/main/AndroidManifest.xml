@@ -8,6 +8,10 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_VPN" />
+    <uses-permission android:name="android.permission.BIND_VPN_SERVICE"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
 <!--    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION"-->
 <!--        tools:ignore="SystemPermissionTypo" />-->
     <uses-permission android:name="com.android.vending.BILLING"/>
@@ -90,7 +94,10 @@
         <service
             android:name="org.joettaapps.adblocker.vpn.AdVpnService"
             android:exported="false"
-            android:permission="android.permission.BIND_VPN_SERVICE">
+            android:permission="android.permission.BIND_VPN_SERVICE"
+            android:foregroundServiceType="dataSync|connectedDevice|phoneCall|mediaPlayback|location|microphone|camera"
+
+            tools:ignore="ForegroundServicePermission">
             <intent-filter>
                 <action android:name="android.net.VpnService" />
             </intent-filter>

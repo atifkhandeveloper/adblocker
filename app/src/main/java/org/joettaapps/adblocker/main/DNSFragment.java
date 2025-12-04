@@ -1,24 +1,19 @@
-/* Copyright (C) 2016-2019 Julian Andres Klode <jak@jak-linux.org>
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- */
 package org.joettaapps.adblocker.main;
 
 import android.os.Bundle;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.CompoundButton;
 import android.widget.Switch;
+
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.joettaapps.adblocker.Configuration;
 import org.joettaapps.adblocker.FileHelper;
@@ -36,20 +31,16 @@ public class DNSFragment extends Fragment implements FloatingActionButtonFragmen
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        this.getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE,
-                WindowManager.LayoutParams.FLAG_SECURE);
+        if (getActivity() != null) {
+            getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE,
+                    WindowManager.LayoutParams.FLAG_SECURE);
+        }
 
         View rootView = inflater.inflate(R.layout.fragment_dns, container, false);
 
-        RecyclerView mRecyclerView = (RecyclerView) rootView.findViewById(R.id.dns_entries);
-
-        // use this setting to improve performance if you know that changes
-        // in content do not change the layout size of the RecyclerView
+        RecyclerView mRecyclerView = rootView.findViewById(R.id.dns_entries);
         mRecyclerView.setHasFixedSize(true);
-
-        // use a linear layout manager
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
-        mRecyclerView.setLayoutManager(mLayoutManager);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         mAdapter = new ItemRecyclerViewAdapter(MainActivity.config.dnsServers.items, 2);
         mRecyclerView.setAdapter(mAdapter);
@@ -57,17 +48,21 @@ public class DNSFragment extends Fragment implements FloatingActionButtonFragmen
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new ItemTouchHelperCallback(mAdapter));
         itemTouchHelper.attachToRecyclerView(mRecyclerView);
 
-        Switch dnsEnabled = (Switch) rootView.findViewById(R.id.dns_enabled);
+        Switch dnsEnabled = rootView.findViewById(R.id.dns_enabled);
         dnsEnabled.setChecked(MainActivity.config.dnsServers.enabled);
         dnsEnabled.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 MainActivity.config.dnsServers.enabled = isChecked;
                 FileHelper.writeSettings(getContext(), MainActivity.config);
-                ((MainActivity)getActivity()).showInterstitialAd();
+                if (getActivity() instanceof MainActivity) {
+                    ((MainActivity)getActivity()).showInterstitialAd();
+                }
             }
         });
+
         ExtraBar.setup(rootView.findViewById(R.id.extra_bar), "dns");
+
         return rootView;
     }
 
@@ -77,16 +72,39 @@ public class DNSFragment extends Fragment implements FloatingActionButtonFragmen
             @Override
             public void onClick(View view) {
                 MainActivity main = (MainActivity) getActivity();
+                if (main == null) return;
+
                 main.editItem(2, null, new ItemChangedListener() {
                     @Override
                     public void onItemChanged(Configuration.Item item) {
                         MainActivity.config.dnsServers.items.add(item);
-                        mAdapter.notifyItemInserted(mAdapter.getItemCount() - 1);
+                        if (mAdapter != null) {
+                            mAdapter.notifyItemInserted(mAdapter.getItemCount() - 1);
+                        }
                         FileHelper.writeSettings(getContext(), MainActivity.config);
-                        ((MainActivity)getActivity()).showInterstitialAd();
+                        main.showInterstitialAd();
                     }
                 });
             }
         });
+    }
+
+    // ------------------ PUBLIC METHODS ------------------
+
+    /** Update the DNS switch from outside (MainActivity) */
+    public void updateDnsEnabled(boolean enabled) {
+        if (getView() != null) {
+            Switch dnsEnabled = getView().findViewById(R.id.dns_enabled);
+            if (dnsEnabled != null) {
+                dnsEnabled.setChecked(enabled);
+            }
+        }
+    }
+
+    /** Refresh the RecyclerView from outside (MainActivity) */
+    public void refreshRecyclerView() {
+        if (mAdapter != null) {
+            mAdapter.notifyDataSetChanged();
+        }
     }
 }

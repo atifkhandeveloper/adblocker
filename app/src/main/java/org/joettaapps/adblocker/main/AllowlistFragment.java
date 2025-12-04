@@ -273,7 +273,7 @@ public class AllowlistFragment extends Fragment {
 
             final ArrayList<ListEntry> entries = new ArrayList<>();
             for (ApplicationInfo appInfo : info) {
-                if (!appInfo.packageName.equals(Build   Config.APPLICATION_ID) &&
+                if (!appInfo.packageName.equals(BuildConfig.APPLICATION_ID) &&
                         (MainActivity.config.allowlist.showSystemApps || (appInfo.flags & ApplicationInfo.FLAG_SYSTEM) == 0)
                         && (!appInfo.packageName.contains("com.google.android")))
                     entries.add(new ListEntry(
